@@ -9,5 +9,3 @@ spring:
       port: 6379
       host: localhost
       password: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
-    mongodb:
-      uri: mongodb://${MONGO_USER:appusr}:${MONGO_PASSWORD:appdev}@${MONGO_HOST:localhost}:${MONGO_PORT:27018}/orders-db

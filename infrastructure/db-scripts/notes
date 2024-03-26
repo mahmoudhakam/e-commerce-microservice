@@ -1,3 +1,0 @@
-mongodb://YourUsername:YourPasswordHere@127.0.0.1:27018/your-database-name
-
-docker run -d --restart=always -p 27018:27017 --name mongo-container -v mongo-data:/data/db -e MONGODB_INITDB_ROOT_USERNAME=appusr -e MONGODB_INITDB_ROOT_PASSWORD=appdev mongo:5.0.8

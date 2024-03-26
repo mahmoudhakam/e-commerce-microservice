@@ -48,7 +48,13 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://${MONGO_USER:appusr}:${MONGO_PASSWORD:appdev}@${MONGO_HOST:localhost}:${MONGO_PORT:27018}/orders-db
+      host: ${MONGO_HOST:localhost}
+      port: ${ MONGO_PORT:27017}
+      database: orders-db
+      username: ${MONGO_USER:appusr}
+      password: ${ MONGO_PASSWORD:appdev}
+      authentication-database: admin
+      auto-index-creation: true
 
     redis:
       port: ${REDIS_PORT:6379 }
@@ -86,4 +92,10 @@ management:
   tracing:
     sampling:
       probability: 1.0
+
+
+logging:
+  level:
+    root: INFO
+    org.apache.kafka: WARN
 

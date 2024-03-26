@@ -12,10 +12,13 @@ services:
       - "27017:27017"
     volumes:
       - D:\docker-volumes\mongo\data\db:/data/db
-#      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./db-scripts/mongo/initdb.d:/docker-entrypoint-initdb.d/
     environment:
-      MONGO_INITDB_ROOT_USERNAME: appusr
-      MONGO_INITDB_ROOT_PASSWORD: appdev
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_ROOT_PASSWORD
+      - MONGO_INITDB_DATABASE=$MONGO_DB
+      - MONGO_DB_USERNAME=$MONGO_DB_USERNAME
+      - MONGO_DB_PASSWORD=$MONGO_DB_PASSWORD
 
 networks:
   e-commerce-network:
