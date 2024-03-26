@@ -5,7 +5,7 @@ jdbc:
 
 spring:
   application:
-    name: orders-management-svc
+    name: payment-management-svc
 
   main:
     keep-alive: true # ensures JVM is kept alive, even if all threads are virtual threads https://docs.spring.io/spring-boot/docs/3.2.0-RC2/reference/htmlsingle/#features.spring-application.virtual-threads
@@ -41,7 +41,7 @@ spring:
         ddl-auto: update
         format_sql: true
         show_sql: true
-        default_schema: orders
+        default_schema: payments
 
   cache:
     type: redis
@@ -50,7 +50,7 @@ spring:
     mongodb:
       host: ${MONGO_HOST:localhost}
       port: ${ MONGO_PORT:27017}
-      database: orders-db
+      database: payments-db
       username: ${MONGO_USER:appusr}
       password: ${ MONGO_PASSWORD:appdev}
       authentication-database: admin
