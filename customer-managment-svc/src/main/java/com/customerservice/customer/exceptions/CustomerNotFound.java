@@ -1,6 +1,6 @@
-package com.carbon.customerservice.customer.exceptions;
+package com.customerservice.customer.exceptions;
 
-import com.carbon.customerservice.common.exceptions.ServiceApiException;
+import com.customerservice.common.exceptions.ServiceApiException;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 

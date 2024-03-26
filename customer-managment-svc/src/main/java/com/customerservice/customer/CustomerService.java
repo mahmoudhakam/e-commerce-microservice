@@ -1,11 +1,9 @@
-package com.carbon.customerservice.customer;
+package com.customerservice.customer;
 
-import com.carbon.customerservice.customer.exceptions.CustomerNotFound;
+import com.customerservice.customer.exceptions.CustomerNotFound;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
-
-import javax.annotation.PostConstruct;
 
 @Service
 @RequiredArgsConstructor

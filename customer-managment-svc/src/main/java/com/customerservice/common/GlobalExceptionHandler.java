@@ -1,7 +1,7 @@
-package com.carbon.customerservice.common;
+package com.customerservice.common;
 
-import com.carbon.customerservice.common.exceptions.ServiceApiException;
-import com.carbon.customerservice.common.models.ApiErrorResponse;
+import com.customerservice.common.exceptions.ServiceApiException;
+import com.customerservice.common.models.ApiErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

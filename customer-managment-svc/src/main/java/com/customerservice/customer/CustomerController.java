@@ -1,6 +1,6 @@
-package com.carbon.customerservice.customer;
+package com.customerservice.customer;
 
-import com.carbon.customerservice.RefreshScopedService;
+import com.customerservice.RefreshScopedService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

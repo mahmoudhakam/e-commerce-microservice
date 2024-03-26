@@ -1,4 +1,4 @@
-package com.carbon.customerservice.common.exceptions;
+package com.customerservice.common.exceptions;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

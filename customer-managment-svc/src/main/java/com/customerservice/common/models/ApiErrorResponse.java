@@ -1,4 +1,4 @@
-package com.carbon.customerservice.common.models;
+package com.customerservice.common.models;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Value;

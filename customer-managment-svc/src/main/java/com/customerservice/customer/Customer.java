@@ -1,4 +1,4 @@
-package com.carbon.customerservice.customer;
+package com.customerservice.customer;
 
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
