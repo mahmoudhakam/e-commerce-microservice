@@ -1,0 +1,17 @@
+server:
+  port: 8040
+
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  application:
+    name: edge-gateway-svc
+  cloud:
+    gateway:
+      routes:
+        - id: order-management-svc
+          uri: lb://order-management-svc
+          predicates:
+            - Path=/order-management-svc/**
+          filters:
+            - RewritePath=/example/(?<path>.*), /$\{path}

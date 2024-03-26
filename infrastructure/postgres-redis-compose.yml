@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  postgres:
+    restart: always
+    container_name: postgres-container-local
+    image: postgres
+    networks:
+      - e-commerce-network
+    ports:
+      - 5432:5432
+    volumes:
+      - 'D:\docker-volumes\postgres\data:/var/lib/postgresql/data'
+    environment:
+      - POSTGRES_PASSWORD=orders
+      - POSTGRES_USER=orders
+      - POSTGRES_DB=orders-db
+
+  cache:
+    container_name: redis-container-local
+    image: redis
+    restart: always
+    networks:
+      - e-commerce-network
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - 'D:\docker-volumes\redis\data:/data'
+
+networks:
+  e-commerce-network:
+    driver: bridge
