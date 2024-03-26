@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hakam</groupId>
-    <artifactId>order-managment-svc</artifactId>
+    <artifactId>shopping-cart-svc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>order-managment-svc</name>
-    <description>Demo project for Springboot order-managment-svc</description>
+    <name>shopping-cart-svc</name>
+    <description>Demo project for Springboot shopping-cart-svc</description>
     <properties>
         <java.version>21</java.version>
         <!-- Lombok & Mapstruct -->
