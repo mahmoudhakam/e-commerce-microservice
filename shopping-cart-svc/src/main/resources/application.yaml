@@ -1,0 +1,101 @@
+# https://jdbc-observations.github.io/datasource-micrometer/docs/current/docs/html/#appendix-common-application-properties
+jdbc:
+  datasource-proxy:
+    enabled: true
+
+spring:
+  application:
+    name: orders-management-svc
+
+  main:
+    keep-alive: true # ensures JVM is kept alive, even if all threads are virtual threads https://docs.spring.io/spring-boot/docs/3.2.0-RC2/reference/htmlsingle/#features.spring-application.virtual-threads
+
+  reactor:
+    context-propagation: auto # automatically propagates trace and span in reactive pipelines.
+
+  threads:
+    virtual:
+      enabled: true
+
+  datasource:
+    hikari.:
+      maximum-pool-size: ${DB_MAX_POOL_SIZE:20}
+      auto-commit: false # improve performance
+      data-source-properties:
+        ApplicationName: ${spring.application.name} # allows to see what applications are connected to the server and what resources they are using through views like pg_stat_activity
+        reWriteBatchedInserts: true
+        stringtype: unspecified
+    url: jdbc:postgresql://${DB_HOST}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092,localhost:9093,localhost:9094}
+
+  jpa:
+    open-in-view: false # disables lazy loading in web views, important for performance.
+    properties:
+      hibernate:
+        generate_statistics: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: update
+        format_sql: true
+        show_sql: true
+        default_schema: orders
+
+  cache:
+    type: redis
+
+  data:
+    mongodb:
+      host: ${MONGO_HOST:localhost}
+      port: ${ MONGO_PORT:27017}
+      database: orders-db
+      username: ${MONGO_USER:appusr}
+      password: ${ MONGO_PASSWORD:appdev}
+      authentication-database: admin
+      auto-index-creation: true
+
+    redis:
+      port: ${REDIS_PORT:6379 }
+      host: ${REDIS_HOST:localhost}
+      password: ${REDIS_PASSWORD}
+
+  profiles:
+    active: ${ENV_PROFILE:dev}
+
+server:
+  port: 8050
+  shutdown: graceful
+  tomcat:
+    # enables tomcat metrics
+    mbeanregistry:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  otlp:
+    metrics:
+      export:
+        url: http://localhost:4318/v1/metrics
+        step: 10s
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+      export:
+        step: 10s # Export interval set to 10 seconds
+  tracing:
+    sampling:
+      probability: 1.0
+
+
+logging:
+  level:
+    root: INFO
+    org.apache.kafka: WARN
+

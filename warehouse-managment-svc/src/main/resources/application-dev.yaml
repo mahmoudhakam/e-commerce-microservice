@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse-db?stringtype=unspecified&reWriteBatchedInserts=true
+    username: warehouse
+    password: warehouse
+
+  data:
+    redis:
+      port: 6379
+      host: localhost
+      password: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
