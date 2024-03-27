@@ -1,0 +1,7 @@
+https://javachallengers.com/design-amazon-e-commerce-systems-design-interview/
+
+https://www.linkedin.com/posts/rocky-bhatia-a4801010_system-design-for-any-e-commerce-website-activity-7122187229250138112-nax7/
+
+https://medium.com/design-microservices-architecture-with-patterns/design-e-commerce-applications-with-microservices-architecture-c69e7f8222e7
+
+https://medium.com/double-pointer/system-design-interview-amazon-flipkart-ebay-or-similar-e-commerce-applications-35a0bc764421

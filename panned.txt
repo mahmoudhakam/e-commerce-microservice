@@ -1,0 +1,69 @@
+Cloud native - dev environment - MS componenets - Dockerize - Security - K8s - ISTIO - CICD(gitops) - event driven - DDD - monitoring - provisioning - technologies - application patterns - resiliency - serverless architecture - clean architecture - HLD - deploy to cloud
+Zero trust Security
+add postgres
+add redis
+load testing
+make file
+add openAPI
+add docker file as multi stage docker image for the app itself
+make another microservice and districute the traceId and spanID
+add discount service GRPC
+add shopping cart
+Application patterns (sidecar - BFF - Gateway of gateways)
+lean code && lean software devlopment && defensive programming && extreme programming
+Cloud native
+enterprise integration patterns
+Nginx & HAproxy
+Event driven architecture (kafka)
+Add valut for secret and key management
+Draw architecture high level, with draw.io
+Draw the order fulfillment flow with kafa communication
+Upgrade to spring cloud streams
+Add Open api to all services
+Add spotify docker images
+Add HA eureka
+Externalize the dependency
+Add web view service to choose products and add to the cart then checkout to fulfillment order
+Add checkout service
+Add shopping cart service
+Add products recommendation service according to the user behavior
+Add user authentication with OAuth2 SSO
+Add jwt, jws or jwe practises
+Add mtls between services
+Service to service auth (microservice auth) , API security owasp
+Add Gateway and guard the backing services with keyclock
+Fully dockerize
+Deploy to K8s and Helm chart
+Deployment strategies
+ISTIO service mesh
+Add histrix dashboard (Add circuit breaker)
+Add distributed tracing zipking && slueth, store events to db
+Add chaos engineering activity
+Add monitoring with grafana,promethues,alert
+Add new relic
+Add ELK
+CICD to deploy to K8s, gitops (JenkinsX , CircleCi, Argo)
+Ansible
+Terraform
+Add graphdb
+Add redis or elastic search service
+Add kafka multistage transaction (listen to your self, saja pattern)
+Deploy to the cloud (AWS - Google), aiming to build cloud native app
+Analysis tool (Sonarqube-Snyk)
+Testing (Testcontainer - Cucumber - BDD - unit testing)
+event souring and CQRS
+12-factor app
+Apply Microservices patterns (FTGO)
+Clean architecture, testing the architecture with testarch
+Event storming
+Feature flags and TBD
+websockets, grpc and graphql
+Akka actors concurrency model
+System resiliency
+Serverless pattern
+Nexus or jfrog
+Skaffold
+Release management process
+Vagrant dev environment
+Flyway
+Scale patterns from zero to millions of users

@@ -10,8 +10,14 @@ spring:
     gateway:
       routes:
         - id: order-management-svc
+          # TODO: to be replaced with a ribbon load balancer regular URL not eureka service id
           uri: lb://order-management-svc
           predicates:
             - Path=/order-management-svc/**
           filters:
             - RewritePath=/example/(?<path>.*), /$\{path}
+
+logging.level:
+  org.springframework.cloud.gateway: TRACE
+  org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
+  org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE

@@ -71,6 +71,10 @@ server:
     # enables tomcat metrics
     mbeanregistry:
       enabled: true
+  ## Should be included to show message, if not error message will be empty
+  error:
+    include-message: always
+    include-binding-errors: always
 
 management:
   endpoints:
