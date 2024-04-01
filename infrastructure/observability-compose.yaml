@@ -47,6 +47,7 @@ services:
 
   loki:
     container_name: loki
+    restart: always
     networks:
       - e-commerce-network
     image: grafana/loki:latest
@@ -56,6 +57,7 @@ services:
 
   grafana:
     container_name: grafana
+    restart: always
     networks:
       - e-commerce-network
     image: grafana/grafana
