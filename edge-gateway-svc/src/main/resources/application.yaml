@@ -1,5 +1,5 @@
 server:
-  port: 8040
+  port: ${SERVER_PORT:8040}
 
 spring:
   profiles:
