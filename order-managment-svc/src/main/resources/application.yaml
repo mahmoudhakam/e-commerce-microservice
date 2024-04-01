@@ -65,7 +65,7 @@ spring:
     active: ${ENV_PROFILE:dev}
 
 server:
-  port: ${SERVER_PORT:8050}
+  port: ${SERVER_PORT:8051}
   shutdown: graceful
   tomcat:
     # enables tomcat metrics

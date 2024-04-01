@@ -1,10 +1,10 @@
 package com.carbon.warehouseservice.warehouse.domain;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
-import javax.validation.constraints.NotEmpty;
 
 @Value
 @Builder

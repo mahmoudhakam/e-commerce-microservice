@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/warehouse-db?stringtype=unspecified&reWriteBatchedInserts=true
-    username: warehouse
-    password: warehouse
+#    url: jdbc:postgresql://localhost:5432/warehouse-db?stringtype=unspecified&reWriteBatchedInserts=true
+#    username: warehouse
+#    password: warehouse
 
   data:
     redis:
