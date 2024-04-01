@@ -7,7 +7,7 @@ System overview:
 System design and architecture:
 
 Functional requirements:
-    
+
     TBD
 
 Non-functional requirements:
@@ -15,7 +15,7 @@ Non-functional requirements:
     TBD
 
 Order putting flow:
-    
+
     TBD
 
 Home/search flow:
@@ -23,7 +23,7 @@ Home/search flow:
     TBD
 
 Recommendations flow:
-    
+
     TBD
 
 https://javachallengers.com/design-amazon-e-commerce-systems-design-interview/
@@ -87,7 +87,7 @@ Deployment Strategy
     Environment setup (development, staging, production)
 
 C4 Model for Order putting
-    
+
 Level 1: System Context diagram:
 
 ![](.\C4-model-architecture\C4-checkout-system-context.svg)
@@ -116,4 +116,8 @@ Deployment diagram:
 TBD
 
 How to run:
-TBD
+
+How to run local infrastructure:
+Make sure that you have make installed on your machine, if you are on windows ''' choco install make '''
+go to the base project, then run
+``` make install-infrastructure ```
