@@ -6,6 +6,7 @@ import com.carbon.financeservice.finance.domain.ProductItem;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.ClientResponse;
@@ -42,7 +43,7 @@ public class CatalogueServiceClient {
                 .get()
                 .uri(builder -> builder.path(itemId).build())
                 .retrieve()
-                .onStatus(HttpStatus::isError, CatalogueServiceClient::mapErrorResponse)
+                .onStatus(HttpStatusCode::isError, CatalogueServiceClient::mapErrorResponse)
                 .bodyToMono(ProductItem.class);
     }
 

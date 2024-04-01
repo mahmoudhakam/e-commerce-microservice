@@ -1,8 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/payments-db?stringtype=unspecified&reWriteBatchedInserts=true
-    username: payments
-    password: payments
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/payments-db?stringtype=unspecified&reWriteBatchedInserts=true
+#    username: payments
+#    password: payments
 
   data:
     redis:
