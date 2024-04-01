@@ -1,0 +1,8 @@
+Send requests with siege and curl to the Spring Boot app
+
+    bash request-script.sh
+    bash trace.sh
+
+Or you can send requests with k6:
+
+    k6 run --vus 3 --duration 300s k6-script.js
