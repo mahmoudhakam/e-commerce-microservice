@@ -1,8 +1,8 @@
 spring:
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/orders-db?stringtype=unspecified&reWriteBatchedInserts=true
-#    username: orders
-#    password: orders
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orders-db?stringtype=unspecified&reWriteBatchedInserts=true
+    username: orders
+    password: orders
 
   data:
     redis:
