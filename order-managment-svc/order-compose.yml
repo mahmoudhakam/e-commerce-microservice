@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  order-management-svc:
+    container_name: order-management-svc
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - e-commerce-network
+
+networks:
+  e-commerce-network:
+    driver: bridge
