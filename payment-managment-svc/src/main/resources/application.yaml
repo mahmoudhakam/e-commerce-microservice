@@ -102,5 +102,5 @@ logging:
 
 app:
   catalogue-service:
-    base-uri: ${CATALOGUE_SERVICE_URI:localhost:9065}
+    base-uri: ${CATALOGUE_SERVICE_URI:localhost:8061}
     products-uri: ${app.catalogue-service.base-uri}/products

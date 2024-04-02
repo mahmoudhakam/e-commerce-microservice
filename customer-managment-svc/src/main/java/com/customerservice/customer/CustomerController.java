@@ -1,6 +1,5 @@
 package com.customerservice.customer;
 
-import com.customerservice.RefreshScopedService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,18 +14,10 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
-    private final RefreshScopedService refreshScopedService;
-
     @GetMapping("/{id}")
     public Mono<Customer> getOne(@PathVariable String id) {
 
         return customerService.get(id);
-    }
-
-    @GetMapping("/refresh")
-    public String refresh() {
-
-        return refreshScopedService.refresh();
     }
 
 }
