@@ -106,7 +106,7 @@ C4 Model for Order putting
 
 Level 1: System Context diagram:
 
-![](.\C4-model-architecture\C4-checkout-system-context.svg)
+![](.\infrastructure\C4-model-architecture\C4-checkout-system-context.svg)
 
 Level 2: Container diagram
 TBD
