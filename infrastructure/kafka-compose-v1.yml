@@ -3,6 +3,7 @@ version: '3.7'
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
     restart: always
     networks:
       - e-commerce-network
@@ -17,6 +18,7 @@ services:
 
   kafka-1:
     image: confluentinc/cp-kafka:latest
+    container_name: kafka-1
     restart: always
     networks:
       - e-commerce-network
@@ -39,6 +41,7 @@ services:
 
   kafka-2:
     image: confluentinc/cp-kafka:latest
+    container_name: kafka-2
     restart: always
     networks:
       - e-commerce-network
@@ -59,6 +62,7 @@ services:
 
   kafka-3:
     image: confluentinc/cp-kafka:latest
+    container_name: kafka-3
     restart: always
     networks:
       - e-commerce-network

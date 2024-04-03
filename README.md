@@ -2,6 +2,12 @@ E-commerce Microservices architecture
 
 Introduction:
 
+Pre-requisites:
+    
+    Install docker desktop
+    Install maven
+    Install java jdk-21 amazoncorrecto distribution
+
 System overview:
 
 System design and architecture:
@@ -131,3 +137,5 @@ How to run local infrastructure:
 Make sure that you have make installed on your machine, if you are on windows ''' choco install make '''
 go to the base project, then run
 ``` make install-infrastructure ```
+
+and then inside each service run ``` make ${servicename}``` to be replaced by names inside Makefile inside each service

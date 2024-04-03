@@ -7,9 +7,12 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
+    environment:
+      - ENV_PROFILE=docker
     networks:
-      - e-commerce-network
+      - infrastructure_e-commerce-network
 
 networks:
-  e-commerce-network:
+  infrastructure_e-commerce-network:
+    external: true
     driver: bridge
