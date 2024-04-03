@@ -1,0 +1,9 @@
+server:
+  port: ${SERVER_PORT:8040}
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: order-management-svc
+          uri: http://order-management-svc:${ORDER_SVC_PORT:8051}

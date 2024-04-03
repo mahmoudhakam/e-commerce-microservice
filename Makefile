@@ -13,3 +13,7 @@ start-postgres-redis: ## Run postgres redis
 install-infrastructure: ## Run all infrastructure
 	echo "install-infrastructure"
 	$(MAKE) start-mongo start-kafka start-observability start-postgres-redis
+
+start-all-services:
+	cd .\order-managment-svc && $(MAKE) start-order-svc
+	cd .\notification-managment-svc && $(MAKE) start-notification-svc
