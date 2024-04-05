@@ -23,5 +23,12 @@ class TestController {
         ResponseEntity<String> responseEntity = this.restTemplate.postForEntity("https://httpbin.org/post", "Hello, Cloud!", String.class);
         return responseEntity.getBody();
     }
+
+    @GetMapping("/notify")
+    public String notify2() {
+        LOGGER.info("---------Notification started---------");
+        ResponseEntity<String> responseEntity = this.restTemplate.postForEntity("http://localhost:8057/v1/api/notifications/sendNotification", "Hello, notification!", String.class);
+        return responseEntity.getBody();
+    }
 }
 

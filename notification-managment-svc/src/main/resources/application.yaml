@@ -79,9 +79,14 @@ management:
         include: health,metrics,prometheus
   metrics:
     tags:
-      application: ${spring.application.name}
+      application-name: ${spring.application.name}
   otlp:
     metrics:
+      distribution:
+        percentiles-histogram:
+          http:
+            server:
+              requests: true
       export:
         url: http://localhost:4318/v1/metrics
         step: 10s
@@ -98,6 +103,8 @@ logging:
   level:
     root: INFO
     org.apache.kafka: WARN
+  pattern:
+    level: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} ${spring.application.name} [%X{traceId}/%X{spanId}] - %msg%n"
 
 app:
   customer-service:

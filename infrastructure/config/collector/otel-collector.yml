@@ -21,6 +21,10 @@ exporters:
       insecure: true
   loki:
     endpoint: "http://loki:3100/loki/api/v1/push"
+  jaeger:
+    endpoint: jaeger-server:14250
+    tls:
+      insecure: true
 
 extensions:
   # responsible for responding to health check calls on behalf of the collector.
@@ -31,17 +35,17 @@ extensions:
   zpages:
 
 service:
-  extensions: [health_check, pprof, zpages]
+  extensions: [ health_check, pprof, zpages ]
   pipelines:
     # for now we only interested about metrics...
     metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [prometheus]
+      receivers: [ otlp ]
+      processors: [ batch ]
+      exporters: [ prometheus ]
     traces:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlp]  # name here should match the exporter name for tempo which is otlp
+      receivers: [ otlp ]
+      processors: [ batch ]
+      exporters: [ otlp, jaeger ]  # name here should match the exporter name for tempo which is otlp
     logs:
-      receivers: [otlp]
-      exporters: [loki,logging]
+      receivers: [ otlp ]
+      exporters: [ loki,logging ]
