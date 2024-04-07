@@ -14,10 +14,13 @@ install-infrastructure: ## Run all infrastructure
 	echo "install-infrastructure"
 	$(MAKE) start-mongo start-kafka start-observability start-postgres-redis
 
-#start-all-services:
-#	cd .\order-managment-svc && $(MAKE) start-order-svc
-#	cd .\notification-managment-svc && $(MAKE) start-notification-svc
-
-start-services-containers:
+start-all-services:
 	cd .\infrastructure\docker-containers && $(MAKE) start-order-svc
 	cd .\infrastructure\docker-containers && $(MAKE) start-notification-svc
+	cd .\infrastructure\docker-containers && $(MAKE) start-payment-svc
+	cd .\infrastructure\docker-containers && $(MAKE) start-product-svc
+	cd .\infrastructure\docker-containers && $(MAKE) start-customer-svc
+	cd .\infrastructure\docker-containers && $(MAKE) start-shopping-svc
+	cd .\infrastructure\docker-containers && $(MAKE) start-warehouse-svc
+	cd .\infrastructure\docker-containers && $(MAKE) start-edge-svc
+	cd .\infrastructure\docker-containers && $(MAKE) start-sso-svc

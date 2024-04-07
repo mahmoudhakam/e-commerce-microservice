@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  payment-management-svc:
+    container_name: payment-management-svc
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - ENV_PROFILE=docker
+    networks:
+      - infrastructure_e-commerce-network
+
+networks:
+  infrastructure_e-commerce-network:
+    external: true
+    driver: bridge
