@@ -1,4 +1,4 @@
-package com.hakam.peanut;
+package com.hakam.testcontroller.peanut;
 
 
 import java.io.Serializable;

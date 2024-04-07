@@ -1,7 +1,6 @@
-package com.hakam.peanut;
+package com.hakam.testcontroller.peanut;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
