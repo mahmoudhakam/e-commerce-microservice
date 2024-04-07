@@ -1,0 +1,16 @@
+spring:
+  cache:
+    type: redis
+  data:
+    redis:
+      port: 6379
+      host: redis-container-local
+      password: ${REDIS_PASSWORD:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81}
+
+management:
+  otlp:
+    metrics:
+      export:
+        url: http://otel-collector:4318/v1/metrics
+    tracing:
+      endpoint: http://otel-collector:4318/v1/traces

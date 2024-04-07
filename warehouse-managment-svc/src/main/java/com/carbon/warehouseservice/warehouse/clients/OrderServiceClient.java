@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-import static com.carbon.warehouseservice.common.configs.KafkaConfig.ORDER_STOCK_CONFIRM_TOPIC;
-import static com.carbon.warehouseservice.common.configs.KafkaConfig.ORDER_STOCK_REJECT_TOPIC;
+import static com.carbon.warehouseservice.configs.KafkaConfig.ORDER_STOCK_CONFIRM_TOPIC;
+import static com.carbon.warehouseservice.configs.KafkaConfig.ORDER_STOCK_REJECT_TOPIC;
 
 @Slf4j
 @Component

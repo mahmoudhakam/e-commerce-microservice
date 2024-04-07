@@ -1,0 +1,26 @@
+spring:
+  kafka:
+    bootstrap-servers: "kafka-1:19092,kafka-2:19093,kafka-3:19094"
+  cache:
+    type: redis
+  data:
+    mongodb:
+      host: mongo-container
+      port: 27017
+      database: customer-db
+      username: ${MONGO_USER:appusr}
+      password: ${ MONGO_PASSWORD:appdev}
+      authentication-database: admin
+      auto-index-creation: true
+    redis:
+      port: 6379
+      host: redis-container-local
+      password: ${REDIS_PASSWORD:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81}
+
+management:
+  otlp:
+    metrics:
+      export:
+        url: http://otel-collector:4318/v1/metrics
+    tracing:
+      endpoint: http://otel-collector:4318/v1/traces

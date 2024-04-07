@@ -5,7 +5,7 @@ jdbc:
 
 spring:
   application:
-    name: orders-management-svc
+    name: customer-management-svc
 
   main:
     keep-alive: true # ensures JVM is kept alive, even if all threads are virtual threads https://docs.spring.io/spring-boot/docs/3.2.0-RC2/reference/htmlsingle/#features.spring-application.virtual-threads
@@ -50,7 +50,7 @@ spring:
     mongodb:
       host: ${MONGO_HOST:localhost}
       port: ${ MONGO_PORT:27017}
-      database: orders-db
+      database: customer-db
       username: ${MONGO_USER:appusr}
       password: ${ MONGO_PASSWORD:appdev}
       authentication-database: admin
@@ -79,9 +79,14 @@ management:
         include: health,metrics,prometheus
   metrics:
     tags:
-      application: ${spring.application.name}
+      application-name: ${spring.application.name}
   otlp:
     metrics:
+      distribution:
+        percentiles-histogram:
+          http:
+            server:
+              requests: true
       export:
         url: http://localhost:4318/v1/metrics
         step: 10s

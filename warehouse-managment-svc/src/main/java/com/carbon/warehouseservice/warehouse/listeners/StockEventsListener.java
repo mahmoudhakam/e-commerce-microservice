@@ -10,8 +10,8 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
-import static com.carbon.warehouseservice.common.configs.KafkaConfig.WAREHOUSE_STOCK_RELEASE_TOPIC;
-import static com.carbon.warehouseservice.common.configs.KafkaConfig.WAREHOUSE_STOCK_RESERVE_TOPIC;
+import static com.carbon.warehouseservice.configs.KafkaConfig.WAREHOUSE_STOCK_RELEASE_TOPIC;
+import static com.carbon.warehouseservice.configs.KafkaConfig.WAREHOUSE_STOCK_RESERVE_TOPIC;
 
 @Slf4j
 @Component

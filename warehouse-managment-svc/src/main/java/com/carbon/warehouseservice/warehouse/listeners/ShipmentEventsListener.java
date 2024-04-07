@@ -9,7 +9,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import static com.carbon.warehouseservice.common.configs.KafkaConfig.WAREHOUSE_SHIPMENT_DISPATCH_TOPIC;
+import static com.carbon.warehouseservice.configs.KafkaConfig.WAREHOUSE_SHIPMENT_DISPATCH_TOPIC;
 
 @Slf4j
 @Component
