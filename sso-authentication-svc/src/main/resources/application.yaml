@@ -67,6 +67,9 @@ management:
     sampling:
       probability: 1.0
 
+otel:
+  grpc-logExporter:
+    endpoint: http://localhost:4317
 
 logging:
   level:

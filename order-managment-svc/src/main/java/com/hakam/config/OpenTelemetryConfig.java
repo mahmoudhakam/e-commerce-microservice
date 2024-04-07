@@ -14,12 +14,16 @@ import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.semconv.resource.attributes.ResourceAttributes;
 import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
 @Configuration
 public class OpenTelemetryConfig {
+
+    @Value("${otel.grpc-logExporter.endpoint}")
+    private String grpcLogExporterEndpoint;
 
     @Bean
     OpenTelemetry openTelemetry(SdkLoggerProvider sdkLoggerProvider, SdkTracerProvider sdkTracerProvider, ContextPropagators contextPropagators) {
@@ -47,7 +51,7 @@ public class OpenTelemetryConfig {
         return BatchLogRecordProcessor
                 .builder(
                         OtlpGrpcLogRecordExporter.builder()
-                                .setEndpoint("http://localhost:4317")
+                                .setEndpoint(grpcLogExporterEndpoint)
                                 .build())
                 .build();
     }

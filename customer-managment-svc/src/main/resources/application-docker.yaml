@@ -24,3 +24,7 @@ management:
         url: http://otel-collector:4318/v1/metrics
     tracing:
       endpoint: http://otel-collector:4318/v1/traces
+
+otel:
+  grpc-logExporter:
+    endpoint: http://otel-collector:4317
