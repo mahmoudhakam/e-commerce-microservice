@@ -19,6 +19,14 @@ services:
       - "4317:4317" # OTLP gRPC receiver
       - "4318:4318" # OTLP http receiver
       - "55679:55679" # zpages extension
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   prometheus:
     container_name: prometheus
@@ -32,6 +40,14 @@ services:
       - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   tempo:
     container_name: tempo
@@ -48,6 +64,14 @@ services:
       - "4317"  # otlp grpc
       - "4318"  # otlp http
       - "9411"   # zipkin
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   jaeger-server:
     image: jaegertracing/all-in-one:1.18.1
@@ -63,6 +87,14 @@ services:
       - "14268:14268"
       - "14250:14250"
       - "9411:9411"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   loki:
     container_name: loki
@@ -73,6 +105,14 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
     ports:
       - "3100:3100"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   grafana:
     container_name: grafana
@@ -87,6 +127,14 @@ services:
       - tempo
       - prometheus
       - jaeger-server
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   elasticsearch:
     image: elasticsearch:8.13.0
@@ -102,6 +150,14 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   kibana:
     image: kibana:8.13.0
@@ -115,6 +171,14 @@ services:
       - e-commerce-network
     depends_on:
       - elasticsearch
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
 networks:
   e-commerce-network:

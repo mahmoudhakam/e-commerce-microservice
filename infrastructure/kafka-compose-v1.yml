@@ -15,6 +15,14 @@ services:
       ZOOKEEPER_SERVER_ID: 1
     ports:
       - "2181:2181"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   kafka-1:
     image: confluentinc/cp-kafka:latest
@@ -38,6 +46,14 @@ services:
       KAFKA_BROKER_ID: 1
     depends_on:
       - zookeeper
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   kafka-2:
     image: confluentinc/cp-kafka:latest
@@ -59,6 +75,14 @@ services:
       KAFKA_BROKER_ID: 2
     depends_on:
       - zookeeper
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   kafka-3:
     image: confluentinc/cp-kafka:latest
@@ -80,6 +104,14 @@ services:
       KAFKA_BROKER_ID: 3
     depends_on:
       - zookeeper
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   kafdrop:
     image: obsidiandynamics/kafdrop
@@ -96,6 +128,14 @@ services:
     environment:
       ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_BROKERCONNECT: kafka-1:29094,kafka-2:29093,kafka-3:29092
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
 networks:
   e-commerce-network:

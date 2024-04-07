@@ -10,7 +10,7 @@ start-observability: ## Run opentelemetry grafana prometheus loki tempo for obse
 start-postgres-redis: ## Run postgres redis
 	@docker compose -f .\infrastructure\postgres-redis-compose.yml up --build -d --wait
 
-install-infrastructure: ## Run all infrastructure
+start-infrastructure: ## Run all infrastructure
 	echo "install-infrastructure"
 	$(MAKE) start-mongo start-kafka start-observability start-postgres-redis
 

@@ -15,6 +15,14 @@ services:
       - POSTGRES_PASSWORD=orders
       - POSTGRES_USER=orders
       - POSTGRES_DB=orders-db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
   cache:
     container_name: redis-container-local
@@ -27,6 +35,14 @@ services:
     command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
     volumes:
       - 'D:\docker-volumes\redis\data:/data'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
 
 networks:
   e-commerce-network:
