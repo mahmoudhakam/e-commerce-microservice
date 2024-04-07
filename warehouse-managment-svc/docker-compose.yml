@@ -7,6 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
+    ports:
+      - "8055:8055"
     environment:
       - ENV_PROFILE=docker
     networks:

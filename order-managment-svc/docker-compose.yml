@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   order-management-svc:
-#    container_name: order-management-svc
+    container_name: order-management-svc
     build:
       context: .
       dockerfile: Dockerfile
@@ -20,7 +20,7 @@ services:
           cpus: '0.25'
           memory: 128M
     ports:
-      - "8051"
+      - "8051:8051"
 
 networks:
   infrastructure_e-commerce-network:
